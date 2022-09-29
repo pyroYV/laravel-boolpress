@@ -7,7 +7,7 @@ Vue.use(VueRouter)
 //importo le singole pagine
 import About from './pages/AboutPage.vue';
 import Contacts from './pages/ContactsPage.vue';
-import App from './pages/app.vue';
+import Home from './pages/HomePage.vue';
 
 const router = new VueRouter({
     mode:'history',
@@ -15,8 +15,8 @@ const router = new VueRouter({
     routes:[
                 {
                     path:'/',
-                    name:'App',
-                    component: App
+                    name:'Home',
+                    component: Home
                 },
                 {
                     path:'/Contacts',
