@@ -1,13 +1,6 @@
 <template>
     <section class="container-lg">
         <h1>Lista Vue</h1>
-       <!--  <ul>
-            <li  v-for="post in posts" :key="post.id">
-                {{post.post_title}} with ID = {{post.id}}
-            </li>
-
-
-        </ul> -->
         <label for="queryFilter"><h2>Filter for:</h2></label>
         <input type="search" name="queryFilter" id="queryFilter" v-model="query" @keyup.enter="getPostsFiltered()">
         <div>
@@ -24,7 +17,7 @@
 
 <script>
 import axios from 'axios';
-import PostComponent from './PostComponent.vue'
+import PostComponent from '../components/PostComponent.vue'
 
 export default {
     data:function(){
