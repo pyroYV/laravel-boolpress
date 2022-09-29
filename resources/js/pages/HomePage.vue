@@ -7,10 +7,12 @@
             <button class="btn btn-danger" @click="prevPage()" :disabled='this.prevPageUrl==null' >Prev</button>
             <button class="btn btn-success" @click="nextPage()" :disabled='this.nextPageUrl==null'>Next</button>
         </div>
+
         <PostComponent
         v-for="post in posts" :key="post.id"
         class="my-3 p-3"
         :post= 'post'
+        :link='true'
         />
 </section>
 </template>

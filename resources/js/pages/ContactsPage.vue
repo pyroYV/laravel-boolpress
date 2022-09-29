@@ -1,6 +1,6 @@
 <template>
   <div>
-    Contacts
+    <img src="https://involvement.uic.edu/wp-content/uploads/sites/263/2020/11/unnamed-3.png" alt="">
   </div>
 </template>
 

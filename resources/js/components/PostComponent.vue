@@ -1,5 +1,8 @@
 <template>
+<div>
+  <router-link :to=" link ? `/posts/${post.id}` : '' " >
   <div class="card">
+
     <li>
         {{post.id}}
     </li>
@@ -10,11 +13,14 @@
         {{post.post_content}}
     </li>
   </div>
+  </router-link>
+  </div>
 </template>
 
 <script>
 export default {
-    props:['post']
+    props:{'post':Object,
+    'link': Boolean}
 }
 </script>
 
