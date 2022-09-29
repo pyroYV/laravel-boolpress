@@ -7,7 +7,9 @@
             <button class="btn btn-danger" @click="prevPage()" :disabled='this.prevPageUrl==null' >Prev</button>
             <button class="btn btn-success" @click="nextPage()" :disabled='this.nextPageUrl==null'>Next</button>
         </div>
-
+        <OfficialBooleanLoader
+        v-if="loading"
+        />
         <PostComponent
         v-for="post in posts" :key="post.id"
         class="my-3 p-3"
@@ -20,6 +22,7 @@
 <script>
 import axios from 'axios';
 import PostComponent from '../components/PostComponent.vue';
+import OfficialBooleanLoader from '../components/OfficialBooleanLoader.vue'
 
 
 export default {
@@ -29,10 +32,12 @@ export default {
             query:'',
             nextPageUrl:'',
             prevPageUrl:'',
+            loading:true
         }
     },
     components:{
         PostComponent,
+        OfficialBooleanLoader
     },
     methods: {
         getPostsFiltered(){
@@ -41,7 +46,8 @@ export default {
                 console.log(result.data.results)
                 this.posts = result.data.results.data
                 this.nextPageUrl = result.data.results.next_page_url;
-                this.prevPageUrl = result.data.results.prev_page_url
+                this.prevPageUrl = result.data.results.prev_page_url;
+                this.loading= false;
             }).catch((err) => {
                 console.error(err)
             });
